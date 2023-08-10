@@ -5,7 +5,6 @@ function getComputerChoice(){
 }
 
 function playRound(playerSelection, computerSelection){
-    computerSelection = getComputerChoice();
     if(playerSelection.toLowerCase()===computerSelection.toLowerCase()){
         return "!!!!Draw!!!!";
     }
