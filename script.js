@@ -37,10 +37,10 @@ function game(){
         const playerSelection = prompt("Choose Rock,Paper or Scissors");
         const computerSelection = getComputerChoice();
         outcome = playRound(playerSelection, computerSelection).substring(4,8);
-            if(outcome===Win!){
+            if(outcome==="Win!"){
                 wins++;
             }
-            else if(outcome===Lose){
+            else if(outcome==="Lose"){
                 loses++;
             } 
             else{
@@ -49,12 +49,12 @@ function game(){
         console.log(playRound(playerSelection, computerSelection));
     }
     if(wins > loses){
-        return "You Win";
+        return `You Win!! - ${wins} wins, ${loses} loses and ${draws} draws`;
     }
     else if(loses > wins){
-        return "You Lose";
+        return `You Lose!! - ${wins} wins, ${loses} loses and ${draws} draws`;
     }
     else{
-        return "Draw";
+        return `!!Draw!! - ${wins} wins, ${loses} loses and ${draws} draws`;
     }
 }
