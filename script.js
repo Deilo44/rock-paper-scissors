@@ -27,3 +27,34 @@ function playRound(playerSelection, computerSelection){
         return "You Win! Scissors beats paper";
     }
 }
+
+function game(){
+    let wins=0;
+    let loses=0;
+    let draws=0;
+    let outcome="";
+    for(let i=0;i<5;i++){
+        const playerSelection = prompt("Choose Rock,Paper or Scissors");
+        const computerSelection = getComputerChoice();
+        outcome = playRound(playerSelection, computerSelection).substring(4,8);
+            if(outcome===Win!){
+                wins++;
+            }
+            else if(outcome===Lose){
+                loses++;
+            } 
+            else{
+                draws++;
+            }
+        console.log(playRound(playerSelection, computerSelection));
+    }
+    if(wins > loses){
+        return "You Win";
+    }
+    else if(loses > wins){
+        return "You Lose";
+    }
+    else{
+        return "Draw";
+    }
+}
