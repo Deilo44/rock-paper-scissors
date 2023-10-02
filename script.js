@@ -6,55 +6,106 @@ function getComputerChoice(){
 
 function playRound(playerSelection, computerSelection){
     if(playerSelection.toLowerCase()===computerSelection.toLowerCase()){
-        return "!!!!Draw!!!!";
+        return "Draw";
     }
     else if(playerSelection.toLowerCase()==="paper" && computerSelection.toLowerCase()==="rock"){
-        return "You Win! Paper beats Rock";
+        return "Win";
     }
     else if(playerSelection.toLowerCase()==="rock" && computerSelection.toLowerCase()==="paper"){
-        return "You Lose! Paper beats Rock";
+        return "Loss";
     }
     else if(playerSelection.toLowerCase()==="rock" && computerSelection.toLowerCase()==="scissors"){
-        return "You Win! Rock beats Scissors";
+        return "Win";
     }
     else if(playerSelection.toLowerCase()==="scissors" && computerSelection.toLowerCase()==="rock"){
-        return "You Lose! Rock beats Scissors";
+        return "Loss";
     }
     else if(playerSelection.toLowerCase()==="paper" && computerSelection.toLowerCase()==="scissors"){
-        return "You Lose! Scissors beats paper";
+        return "Loss";
     }
     else if(playerSelection.toLowerCase()==="scissors" && computerSelection.toLowerCase()==="paper"){
-        return "You Win! Scissors beats paper";
+        return "Win";
     }
 }
 
-function game(){
-    let wins=0;
-    let loses=0;
-    let draws=0;
-    let outcome="";
-    for(let i=0;i<5;i++){
-        const playerSelection = prompt("Choose Rock,Paper or Scissors");
-        const computerSelection = getComputerChoice();
-        outcome = playRound(playerSelection, computerSelection).substring(4,8);
-            if(outcome==="Win!"){
-                wins++;
-            }
-            else if(outcome==="Lose"){
-                loses++;
-            } 
-            else{
-                draws++;
-            }
-        console.log(playRound(playerSelection, computerSelection));
+const b1=document.getElementById("b1");
+const b2=document.getElementById("b2");
+const b3=document.getElementById("b3");
+const computerline=document.getElementById("computerline");
+const wins=document.getElementById("wins");
+const loses=document.getElementById("loses");
+const result=document.getElementById("result");
+let wincount=0;
+let losscount=0;
+
+b1.addEventListener("click",function(){
+    let computerchoice=getComputerChoice();
+    let gameround=playRound("rock",computerchoice);
+    if(gameround=="Draw"){
+        wincount+=0.5;
+        losscount+=0.5;
+        wins.textContent=wincount;
+        loses.textContent=losscount;
+        computerline.textContent=computerchoice;
     }
-    if(wins > loses){
-        return `You Win!! - ${wins} wins, ${loses} loses and ${draws} draws`;
-    }
-    else if(loses > wins){
-        return `You Lose!! - ${wins} wins, ${loses} loses and ${draws} draws`;
+    else if(gameround=="Win"){
+        wincount++;
+        wins.textContent=wincount;
+        loses.textContent=losscount;
+        computerline.textContent=computerchoice;
     }
     else{
-        return `!!Draw!! - ${wins} wins, ${loses} loses and ${draws} draws`;
+        losscount++;
+        wins.textContent=wincount;
+        loses.textContent=losscount;
+        computerline.textContent=computerchoice;
     }
-}
+});
+
+b2.addEventListener("click",function(){
+    let computerchoice=getComputerChoice();
+    let gameround=playRound("Paper",computerchoice);
+    if(gameround=="Draw"){
+        wincount+=0.5;
+        losscount+=0.5;
+        wins.textContent=wincount;
+        loses.textContent=losscount;
+        computerline.textContent=computerchoice;
+    }
+    else if(gameround=="Win"){
+        wincount++;
+        wins.textContent=wincount;
+        loses.textContent=losscount;
+        computerline.textContent=computerchoice;
+    }
+    else{
+        losscount++;
+        wins.textContent=wincount;
+        loses.textContent=losscount;
+        computerline.textContent=computerchoice;
+    }
+});
+
+b3.addEventListener("click",function(){
+    let computerchoice=getComputerChoice();
+    let gameround=playRound("Scissors",computerchoice);
+    if(gameround=="Draw"){
+        wincount+=0.5;
+        losscount+=0.5;
+        wins.textContent=wincount;
+        loses.textContent=losscount;
+        computerline.textContent=computerchoice;
+    }
+    else if(gameround=="Win"){
+        wincount++;
+        wins.textContent=wincount;
+        loses.textContent=losscount;
+        computerline.textContent=computerchoice;
+    }
+    else{
+        losscount++;
+        wins.textContent=wincount;
+        loses.textContent=losscount;
+        computerline.textContent=computerchoice;
+    }
+});
