@@ -35,6 +35,7 @@ const computerline=document.getElementById("computerline");
 const wins=document.getElementById("wins");
 const loses=document.getElementById("loses");
 const result=document.getElementById("result");
+const reset=document.getElementById("reset");
 let wincount=0;
 let losscount=0;
 
@@ -60,10 +61,10 @@ b1.addEventListener("click",function(){
         loses.textContent=losscount;
         computerline.textContent=computerchoice;
     }
-    else if(wincount===5){
+    else if(wincount===5 || wincount>5){
         result.textContent="!!!!!!!You win the Game!!!!!!!!";
     }
-    else if(losscount===5){
+    else if(losscount===5 || losscount>5){
         result.textContent="You Lost!!!";
     }
     else {
@@ -93,10 +94,10 @@ b2.addEventListener("click",function(){
         loses.textContent=losscount;
         computerline.textContent=computerchoice;
     }
-    else if(wincount===5){
+    else if(wincount===5 || wincount>5){
         result.textContent="!!!!!!!You win the Game!!!!!!!!";
     }
-    else if(losscount===5){
+    else if(losscount===5 || losscount>5){
         result.textContent="You Lost!!!";
     }
     else {
@@ -126,13 +127,22 @@ b3.addEventListener("click",function(){
         loses.textContent=losscount;
         computerline.textContent=computerchoice;
     }
-    else if(wincount===5){
+    else if(wincount===5 || wincount>5){
         result.textContent="!!!!!!!You win the Game!!!!!!!!";
     }
-    else if(losscount===5){
+    else if(losscount===5 || losscount>5){
         result.textContent="You Lost!!!";
     }
     else {
         result.textContent="......Draw.......";
     }
+});
+
+reset.addEventListener("click",function(){
+    wincount=0;
+    losscount=0;
+    wins.textContent="....";
+    loses.textContent="....";
+    result.textContent="First to 5 points wins";
+    computerline.textContent="none yet";
 });
