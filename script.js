@@ -66,7 +66,7 @@ b1.addEventListener("click",function(){
     else if(losscount===5){
         result.textContent="You Lost!!!";
     }
-    else{
+    else {
         result.textContent="......Draw.......";
     }
 });
@@ -99,7 +99,7 @@ b2.addEventListener("click",function(){
     else if(losscount===5){
         result.textContent="You Lost!!!";
     }
-    else{
+    else {
         result.textContent="......Draw.......";
     }
 });
@@ -132,7 +132,7 @@ b3.addEventListener("click",function(){
     else if(losscount===5){
         result.textContent="You Lost!!!";
     }
-    else{
+    else {
         result.textContent="......Draw.......";
     }
 });
