@@ -11,3 +11,10 @@ body {
     flex-direction: column;
     align-items: center;
 }
+.playground {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-right: 0%;
+    align-items: center;
+}
