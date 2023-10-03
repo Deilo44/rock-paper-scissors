@@ -41,71 +41,89 @@ let losscount=0;
 b1.addEventListener("click",function(){
     let computerchoice=getComputerChoice();
     let gameround=playRound("rock",computerchoice);
-    if(gameround=="Draw"){
+    if(gameround=="Draw" && wincount <5 && losscount < 5){
         wincount+=0.5;
         losscount+=0.5;
         wins.textContent=wincount;
         loses.textContent=losscount;
         computerline.textContent=computerchoice;
     }
-    else if(gameround=="Win"){
+    else if(gameround=="Win" && wincount <5 && losscount < 5){
         wincount++;
         wins.textContent=wincount;
         loses.textContent=losscount;
         computerline.textContent=computerchoice;
     }
-    else{
+    else if(gameround=="Loss" && wincount <5 && losscount < 5){
         losscount++;
         wins.textContent=wincount;
         loses.textContent=losscount;
         computerline.textContent=computerchoice;
+    }
+    else if(wincount===5){
+        result.textContent="!!!!!!!You win the Game!!!!!!!!";
+    }
+    else {
+        result.textContent="You Lost!!!";
     }
 });
 
 b2.addEventListener("click",function(){
     let computerchoice=getComputerChoice();
     let gameround=playRound("Paper",computerchoice);
-    if(gameround=="Draw"){
+    if(gameround=="Draw" && wincount <5 && losscount < 5){
         wincount+=0.5;
         losscount+=0.5;
         wins.textContent=wincount;
         loses.textContent=losscount;
         computerline.textContent=computerchoice;
     }
-    else if(gameround=="Win"){
+    else if(gameround=="Win" && wincount <5 && losscount < 5){
         wincount++;
         wins.textContent=wincount;
         loses.textContent=losscount;
         computerline.textContent=computerchoice;
     }
-    else{
+    else if(gameround=="Loss" && wincount <5 && losscount < 5){
         losscount++;
         wins.textContent=wincount;
         loses.textContent=losscount;
         computerline.textContent=computerchoice;
+    }
+    else if(wincount===5){
+        result.textContent="!!!!!!!You win the Game!!!!!!!!";
+    }
+    else {
+        result.textContent="You Lost!!!";
     }
 });
 
 b3.addEventListener("click",function(){
     let computerchoice=getComputerChoice();
     let gameround=playRound("Scissors",computerchoice);
-    if(gameround=="Draw"){
+    if(gameround=="Draw" && wincount <5 && losscount < 5){
         wincount+=0.5;
         losscount+=0.5;
         wins.textContent=wincount;
         loses.textContent=losscount;
         computerline.textContent=computerchoice;
     }
-    else if(gameround=="Win"){
+    else if(gameround=="Win" && wincount <5 && losscount < 5){
         wincount++;
         wins.textContent=wincount;
         loses.textContent=losscount;
         computerline.textContent=computerchoice;
     }
-    else{
+    else if(gameround=="Loss" && wincount <5 && losscount < 5){
         losscount++;
         wins.textContent=wincount;
         loses.textContent=losscount;
         computerline.textContent=computerchoice;
+    }
+    else if(wincount===5){
+        result.textContent="!!!!!!!You win the Game!!!!!!!!";
+    }
+    else {
+        result.textContent="You Lost!!!";
     }
 });
